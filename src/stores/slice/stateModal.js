@@ -1,22 +1,12 @@
-// const stateModal = {
-//   isOpen: false,
-//   bodyType: '',
-//   size: 'md',
-//   extraObject: ''
-// };
+const initialState = {
+  isOpen: false,
+  type: '',
+  size: 'md',
+  props: {}
+}
 
-// export const createModalSlice = (set) => ({
-//   ...stateModal,
-//   openModal: ({ bodyType, size, extraObject }) => set(() => ({
-//     isOpen: true,
-//     bodyType,
-//     size,
-//     extraObject
-//   })),
-//   closeModal: () => set(() => ({
-//     isOpen: false,
-//     bodyType: '',
-//     size: '',
-//     extraObject: ''
-//   }))
-// });
+export const createModalSlice = (set) => ({
+  ...initialState,
+  openModal: (params) => set({ ...params, isOpen: true }),
+  closeModal: () => set(initialState)
+})
