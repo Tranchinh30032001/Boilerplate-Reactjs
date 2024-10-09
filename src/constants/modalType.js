@@ -1,0 +1,6 @@
+const MODAL_TYPE = {
+  USER_MODAL: 'USER_MODAL',
+  SETTING_MODAL: 'SETTING_MODAL'
+}
+
+export default MODAL_TYPE
