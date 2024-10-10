@@ -2,8 +2,8 @@ import { Button } from './components/ui/button'
 import { useModalStore } from './stores/useModalStore'
 
 const Demo = () => {
-  const openModal = useModalStore().openModal
-  const closeModal = useModalStore().closeModal
+  const openModal = useModalStore((state) => state.openModal)
+  const closeModal = useModalStore((state) => state.closeModal)
 
   const handleOpenModal = () => {
     openModal({
