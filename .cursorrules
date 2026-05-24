@@ -1,0 +1,27 @@
+# Cursor Rules — s3-fe
+
+You are an expert AI frontend developer. You must strictly adhere to the project standards and guidelines:
+
+1. **Read Core Guides First:**
+   - Tech stack & architecture rules: Read [AGENTS.md](file:///Users/chinhtv/Resource/Company/practice-s3/AGENTS.md) and [CLAUDE.md](file:///Users/chinhtv/Resource/Company/practice-s3/CLAUDE.md)
+   - Code conventions: Read [skills/rules.md](file:///Users/chinhtv/Resource/Company/practice-s3/skills/rules.md)
+   - Feature development workflow: Read [skills/feature-guide.md](file:///Users/chinhtv/Resource/Company/practice-s3/skills/feature-guide.md)
+
+2. **Tech Stack & Versions:**
+   - React 19 + TypeScript 6 + Vite
+   - Tailwind CSS v4 (using `@import "tailwindcss";` in `src/index.css`)
+   - Zustand (global state) & TanStack Query v5 (server state)
+
+3. **No Mismatches / Outdated Practices:**
+   - DO NOT write code in `src/shared/`. Shared files go to `src/components/`, `src/utils/`, or `src/hooks/`.
+   - DO NOT use `axios` directly; use the `apiClient` wrapper in `src/services/apiClient.ts`.
+   - Barrel exports only: cross-feature imports must use `src/features/[name]/index.ts`.
+
+4. **Types & Validation:**
+   - Zod schemas and TypeScript types must stay coupled.
+   - Follow the 3-level escalation rule (inline -> feature-level `types.ts` file -> global `src/types/index.ts`). No `types/` or `schemas/` directories inside features.
+
+5. **No Code Logic Without Tests (CRITICAL):**
+   - You MUST write a corresponding co-located unit test file (`*.test.ts` or `*.test.tsx`) for ANY new logic, utility function, hook, or UI component you write or modify.
+   - Do NOT deliver untested code logic. Write the test and source code concurrently.
+
